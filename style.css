@@ -6,7 +6,17 @@
     margin: 10px 0;
     font-weight: 600;
     cursor: pointer;
+    /* 指定した要素がCSS プロパティが変化する際のアニメーションの速度を操作する手段 */
+    /* ease 開始するまでの時間指定 */
+    transition: color 0.3s ease 1s,
+                background-color 0.3s ease 2s;
 }
 #container{
     text-align: center;
+}
+/* 指定した要素にカーソルが乗った時にcssが実行出来る擬似クラス　フォバー */
+.btn:hover {
+background-color: black;
+color: white;
+
 }
