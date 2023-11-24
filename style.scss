@@ -5,6 +5,10 @@ $cBlack:rgb(121, 65, 65);
 
 #container{
     text-align: center;
+    // idとclassどちらもスタイルを当てたい時
+    .btn{
+        
+    }
 }
 .btn{
     background-color: $cWhite;
