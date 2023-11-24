@@ -1,29 +1,25 @@
 
-// 変数として使用できる
-$cWhite:rgb(189, 175, 175);
-$cBlack:rgb(121, 65, 65);
-
-#container{
-    text-align: center;
-    // idとclassどちらもスタイルを当てたい時
-    .btn{
-        
-    }
+.parent {
+  color: blue;
+/* > 大なりを付けることでひと段落下の指定した子要素のみにスタイルが当たる */
+//   半角のみスペースを開けると段落関係なく全ての子要素にスタイルが当たる
+    & > .element {
+    color: purple;
 }
-.btn{
-    background-color: $cWhite;
-    color: $cBlack;
-    border: 1px solid $cBlack;
-    padding: 10px 40px;
-    margin: 10px 0;
-    font-weight: 600;
-    cursor: pointer;
-    /* 指定した要素がCSS プロパティが変化する際のアニメーションの速度を操作する手段 */
-    /* ease 開始するまでの時間指定 */
-    transition: all 0.3s ;
-
-    &:hover {
-        background-color:$cBlack;
-        color:$cWhite;
+        & .second-child{
+        color: black;
         }
-    }
+}
+
+.element{
+  color: red;
+}
+
+/* 以下の指定だと詳細度が小さい為上記のように指定する */
+/* .second-child{
+  color: black;
+} */
+
+/* .child{
+  color: purple;
+} */

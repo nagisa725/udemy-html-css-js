@@ -1,20 +1,23 @@
 @charset "UTF-8";
-#container {
-  text-align: center;
+.parent {
+  color: blue;
+  /* > 大なりを付けることでひと段落下の指定した子要素のみにスタイルが当たる */
 }
-.btn {
-  background-color: rgb(189, 175, 175);
-  color: rgb(121, 65, 65);
-  border: 1px solid rgb(121, 65, 65);
-  padding: 10px 40px;
-  margin: 10px 0;
-  font-weight: 600;
-  cursor: pointer;
-  /* 指定した要素がCSS プロパティが変化する際のアニメーションの速度を操作する手段 */
-  /* ease 開始するまでの時間指定 */
-  transition: all 0.3s;
+.parent > .element {
+  color: purple;
 }
-.btn:hover {
-  background-color: rgb(121, 65, 65);
-  color: rgb(189, 175, 175);
-}/*# sourceMappingURL=style.css.map */
+.parent .second-child {
+  color: black;
+}
+
+.element {
+  color: red;
+}
+
+/* 以下の指定だと詳細度が小さい為上記のように指定する */
+/* .second-child{
+  color: black;
+} */
+/* .child{
+  color: purple;
+} *//*# sourceMappingURL=style.css.map */
