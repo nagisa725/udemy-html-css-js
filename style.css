@@ -1,0 +1,27 @@
+body{
+    text-align: center
+}
+#first{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #8a2be2;
+}
+.cls{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color:gold;
+}
+span{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #8a2be2; 
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin: auto;
+}
