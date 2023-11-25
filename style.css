@@ -1,18 +1,57 @@
-.content {
+#contant {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.content .btn {
+#contant > div {
+  flex-basis: 300px;
+}
+
+.try .btn {
+  position: relative;
+  display: inline-block;
   background-color: white;
-  color: Black;
-  border: 1px solid;
-  padding: 10px 40px;
-  margin: 30px;
+  border: 1px solid Black;
   font-weight: 600;
-  transition: color 0.2s ease 0.1s;
+  padding: 10px 40px;
+  margin: 10px auto;
   cursor: pointer;
+  transition: all 0.3s;
+  color: Black;
+  text-decoration: none;
 }
-.content .float:hover {
+.try .btn.float:hover {
   background-color: Black;
   color: white;
-  box-shadow: 0 0 50px Black;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.try .btn.filled {
+  background-color: Black;
+  color: white;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.try .btn.filled:hover {
+  background-color: white;
+  color: Black;
+  box-shadow: none;
+}
+.try .btn.letter-spacing:hover {
+  background-color: Black;
+  letter-spacing: 3px;
+  color: white;
+}
+.try .btn.shadow {
+  box-shadow: none;
+}
+.try .btn.shadow:hover {
+  transform: translate(-2.5pssx, -2.5px);
+  box-shadow: 5px 5px 0 0 Black;
+}
+.try .btn.solid {
+  box-shadow: 2px 2px 0 0 Black;
+  border-radius: 7px;
+}
+.try .btn.solid:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }/*# sourceMappingURL=style.css.map */
