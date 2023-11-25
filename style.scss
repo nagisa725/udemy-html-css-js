@@ -1,25 +1,34 @@
+$cWhite:white;
+$cBlack:Black;
 
-.parent {
-  color: blue;
-/* > 大なりを付けることでひと段落下の指定した子要素のみにスタイルが当たる */
-//   半角のみスペースを開けると段落関係なく全ての子要素にスタイルが当たる
-    & > .element {
-    color: purple;
-}
-        & .second-child{
-        color: black;
+
+.content{
+    text-align: center;
+        .btn{
+            background-color:$cWhite ;
+            color: $cBlack;
+            border: 1px solid ;
+            padding: 10px 40px;
+            margin: 30px;
+            font-weight: 600;
+            transition: color 0.2s ease 0.1s;
+            cursor: pointer;
+
         }
+        & .float{
+            &:hover{
+                    background-color: $cBlack;
+                    color: $cWhite;
+                    box-shadow: 0 0 50px $cBlack;
+                }
+            }
+            // hover{
+            //     background-color: $cBlack;
+            //     color: $cWhite;
+            // }
+        
 }
-
-.element{
-  color: red;
-}
-
-/* 以下の指定だと詳細度が小さい為上記のように指定する */
-/* .second-child{
-  color: black;
-} */
-
-/* .child{
-  color: purple;
-} */
+// .btn:hover{
+//     background-color: $cBlack;
+//     color: $cWhite;
+// }

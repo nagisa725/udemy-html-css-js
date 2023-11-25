@@ -1,23 +1,18 @@
-@charset "UTF-8";
-.parent {
-  color: blue;
-  /* > 大なりを付けることでひと段落下の指定した子要素のみにスタイルが当たる */
+.content {
+  text-align: center;
 }
-.parent > .element {
-  color: purple;
+.content .btn {
+  background-color: white;
+  color: Black;
+  border: 1px solid;
+  padding: 10px 40px;
+  margin: 30px;
+  font-weight: 600;
+  transition: color 0.2s ease 0.1s;
+  cursor: pointer;
 }
-.parent .second-child {
-  color: black;
-}
-
-.element {
-  color: red;
-}
-
-/* 以下の指定だと詳細度が小さい為上記のように指定する */
-/* .second-child{
-  color: black;
-} */
-/* .child{
-  color: purple;
-} *//*# sourceMappingURL=style.css.map */
+.content .float:hover {
+  background-color: Black;
+  color: white;
+  box-shadow: 0 0 50px Black;
+}/*# sourceMappingURL=style.css.map */
