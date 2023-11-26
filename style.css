@@ -7,10 +7,9 @@ body {
   width: 100px;
   height: 100px;
   background-color: Black;
-  animation: sk-bouncedelay 1.4s;
-  animation-timing-function: ease;
+  animation-name: sk-bouncedelay;
+  animation-duration: 1.4s;
   animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
 }
 
 @keyframes sk-bouncedelay {
@@ -20,10 +19,10 @@ body {
   }
   40% {
     transform: scale(2);
-    background-color: red;
+    background-color: violet;
   }
   100% {
     transform: scale(1);
-    background-color: violet;
+    background-color: lawngreen;
   }
 }/*# sourceMappingURL=style.css.map */
