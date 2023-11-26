@@ -1,32 +1,29 @@
-.three-dot-spinner {
+body {
   text-align: center;
 }
-.three-dot-spinner div {
+
+.rect {
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 100px;
+  height: 100px;
   background-color: Black;
-  border-radius: 50%;
-  animation: sk-bouncedelay 1.4s infinite;
-}
-.three-dot-spinner .bounce1 {
-  animation-delay: -0.32s;
-}
-.three-dot-spinner .bounce2 {
-  animation-delay: -0.16s;
+  animation: sk-bouncedelay 1.4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
 
 @keyframes sk-bouncedelay {
   0% {
     transform: scale(0);
+    background-color: blue;
   }
   40% {
-    transform: scale(1);
-  }
-  80% {
-    transform: scale(0);
+    transform: scale(2);
+    background-color: red;
   }
   100% {
-    transform: scale(0);
+    transform: scale(1);
+    background-color: violet;
   }
 }/*# sourceMappingURL=style.css.map */
