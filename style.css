@@ -1,8 +1,40 @@
-.contant {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  background-color: orangered;
-  transform: scale(1.2, 1.2);
-  transform-origin: center center;
+#container {
+  padding: 1rem;
+  position: relative;
+  background: gray;
+}
+#container div {
+  font-weight: 600;
+  padding: 0.5rem;
+  font-size: 1.1em;
+  width: 150px;
+  height: 150px;
+  box-shadow: 7px 7px 0 0 #000;
+}
+#container .div-1 {
+  background-color: orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+#container .div-2 {
+  background: tomato;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+#container > .div-3 {
+  background: teal;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 50;
+}
+#container .div-4 {
+  width: 80px;
+  height: 80px;
+  background-color: violet;
+  z-index: 10;
 }/*# sourceMappingURL=style.css.map */

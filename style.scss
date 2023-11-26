@@ -1,30 +1,56 @@
-.contant{
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    // ブロック要素に対してmargin: 0 auto;をする事で左右中央揃いになる
-    background-color: orangered;
-    transform: scale(1.2,1.2);
+#container{
+    padding: 1rem;
+    position: relative;
+    background: gray;
     
-    // 以下の定義は半角スペースを開けて入力する事で複数個選択できる
+        div{
+            font-weight: 600;
+            padding: .5rem;
+            font-size: 1.1em;
+            width: 150px;
+            height: 150px;
+            box-shadow: 7px 7px 0 0 #000;
+        }
 
-        // ransform: scale(1.1,1.1...ets);
-        // 物体自体の大きさを指定できる
-        // 第一引数X軸方向、第二引数にY軸方向に指定出来る、
+            & .div-1{
+            background-color: orange;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            z-index: 0;
 
-        // transform: skew(~deg);
-        // 平行四辺形を定義する時に使用する
-        // XとYで値を指定できるが(Xdeg Ydeg)もセットで使う
-        
-        // transform: :translate
-        // 第一引数X軸方向、第二引数にY軸方向移動する、
-        // 100%だと物体一個分移動する
-        // -マイナスを付けると反対方向に移動
+            }
+            // position: static;だとz-indexは効かない
 
-        // transform: rotate(30deg);
-        // ( ~deg)で指定した角度右に回転、マイナスを付けると左に回転
-        transform-origin:center center;
-        // transform-origin: ;とセットで使う事で頂点を視点に決めそれを軸に回転させることができる
+            & .div-2{
+                background: tomato;
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index:20;               
+            }
 
+            & >.div-3{
+                background: teal;
+                position: absolute;
+                top: 40px;
+                left: 40px;
+                z-index: 50;
+            }
 
+            & .div-4{
+                width: 80px;
+                height: 80px;
+                background-color: violet;
+                z-index: 10;
+            }
 }
+// position:まとめ
+ // position: static;
+     // 初期値
+ // position: absolute;
+     // relative;がついた親要素に順じて絶対的な位置固定を指定できる
+ // position:fixed;
+     // web場の位置固定を指定できる、スクロールをしても動かない
+ // position:sticky;
+     // 親要素のheight;指定分画面に同じ位置で固定される
