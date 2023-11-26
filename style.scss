@@ -1,56 +1,51 @@
-#container{
-    padding: 1rem;
-    position: relative;
-    background: gray;
-    
-        div{
-            font-weight: 600;
-            padding: .5rem;
-            font-size: 1.1em;
-            width: 150px;
-            height: 150px;
-            box-shadow: 7px 7px 0 0 #000;
-        }
+$cWhite: white;
+$cBlack: black;
 
-            & .div-1{
-            background-color: orange;
-            position: absolute; 
+#container{
+    text-align: center;
+}
+
+.btn{
+    background-color: $cWhite;
+    color: $cBlack;
+    border: 1px solid $cBlack;
+    padding: 10px 40px;
+    margin: 50px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &.slide-bg{
+        position: relative;
+        overflow: hidden;
+        // overflow: hidden; ボタンの枠の回りは非表示という指定が出来る
+        // overflow: visible;枠回りを出す、戻す指定
+        z-index: 1;
+
+        & span {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color:$cBlack;
+            position: absolute;
             top: 0;
             left: 0;
-            z-index: 0;
+            transform:translateX(-100%);
+            transition: transform 0.3s;
+            z-index: -1;
+        }
 
+        &:hover {
+            color: $cWhite;
+        
+            & span {
+            transform: none;
             }
-            // position: static;だとz-indexは効かない
-
-            & .div-2{
-                background: tomato;
-                position: relative;
-                top: 0;
-                left: 0;
-                z-index:20;               
-            }
-
-            & >.div-3{
-                background: teal;
-                position: absolute;
-                top: 40px;
-                left: 40px;
-                z-index: 50;
-            }
-
-            & .div-4{
-                width: 80px;
-                height: 80px;
-                background-color: violet;
-                z-index: 10;
-            }
+        }
+        
+    }
 }
-// position:まとめ
- // position: static;
-     // 初期値
- // position: absolute;
-     // relative;がついた親要素に順じて絶対的な位置固定を指定できる
- // position:fixed;
-     // web場の位置固定を指定できる、スクロールをしても動かない
- // position:sticky;
-     // 親要素のheight;指定分画面に同じ位置で固定される
+// &:hover{
+//     background-color: $cBlack;
+//     color: $cWhite;
+// }
