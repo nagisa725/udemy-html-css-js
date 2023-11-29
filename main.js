@@ -1,32 +1,39 @@
-// 基本的な関数の書き方
+// 関数を定義している
 function hello(name){
-    console.log("hello"+name)
-};
-hello("山田花子");
-hello("山田花子 2");
-// 引数に名前を渡す事もできる
-function hello(name="山田太郎"){
-    console.log("hallo"+name)
-};
-hello();
-// 変数に関数を代入した場合
-const hello2 =function(name="山田智子"){
-    console.log("hallo"+name)
-};
-hello2();
-// 上記を使いアロー関数の記述方法(記述の簡略化)
-const hello3 =(name="山田友蔵") => console.log("hallo"+name);
-// funcsion省略、二行目から{}使用
-hello3();
-// 引数に何も渡さない場合()も省略可能
-const hello4 = name => console.log("hallo"+name);
-hello4("原田泰造");
-// 関数の引数が２つ以上になる場合は()が必要
-const hello5 = (name,age) => console.log("hallo"+name+age);
-hello5("出川哲朗",50);
+  console.log("hello"+name);
+}
 
-// for文の際一緒に使うと実用的なのだ
-const arry = [1,2,3,4,5,6];
+const hello =  (name) => {
+  console.log("hello" + name);
+}
 
-arry.forEach (value => console.log(value));
+// 関数を呼び出している
+hello("かむかむレモン");
 
+// コールバック関数
+function hello2 (name){
+    console.log(name)
+    console.log("hello" + name());
+}
+
+function getName(){
+    return "かむかむぶどう";
+}
+
+hello2(getName);
+
+const string = 'kakakka'
+string()
+
+const name = function getName(){
+    return "かむかむぶどう";
+}
+
+function declaration(box){
+    console.log("こんにちは"+box());
+}
+function greet(){
+    return "Hello";
+}
+
+declaration(greet);
