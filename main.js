@@ -87,6 +87,7 @@ console.log()
 const timeSale = function(origin, saleValue) {
                 /*        1000     300   */
     return origin - saleValue
+    /*        700*/ 
 }
 
 const thirtySale = function(callback, b, c) {
@@ -96,15 +97,20 @@ const thirtySale = function(callback, b, c) {
     const e = callback(b, d)
     /*        timeSale(1000,300)      */ 
     return e - c
+    /*   500   */ 
 }
 
 const fiftySale = function(callback, b, c) {
+    /*                    timeSale.1000,200*/
     const d = 500
     const e = callback(b, d)
+    /*              1000,500*/ 
     return e - c
+    /*      500,*/ 
 }
 
 const aho = function(callback, b, c) {
+    /*                      1000,200*/ 
     const d = 500
     const e = callback(b, d)
     return e - c
