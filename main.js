@@ -1,173 +1,46 @@
-
 const arry = [1,2,3,4,5];
 
-function forEach(ary){
-    for(let i = 0; i < ary.length; i++){
-        console.log(ary[i]);
-    }
-}
+/* 前のループの戻り値が次のループのaccumulatorに渡ってくるのがreduceというメソッド*/ 
+// 配列の中身を一つずつ足していって合計を求める事ができる
+arry.reduce(function(accu,curr){
+    console.log(accu,curr);
+    return accu + curr ;
+})
 
-forEach(arry);
+/*currentValue：現在処理されている要素 に*/ 
+/*1ループ目はaccuで配列[1,]から取って持ってきているが、
+それをcurrに全て戻すためにはreduceの第二引数に初期値を設定する*/ 
 
+arry.reduce(
+    function(accu,curr){
+    console.log(accu,curr);
+    // return accu + curr ;
+},10);
 
+/*文字列を分割して配列化する*/ 
 
+const str = 'opantyuusagi';
+const strArry = str.split('');
 
+console.log(strArry);
 
+/*文字列を< >で囲い分割で配列化したいとき*/
 
-const a = 100
+const result = strArry.reduce((accu,curr) => {
+    return accu + "<" + curr + ">";
+ },"")/*第二引数に空文字列*/ 
 
-const func_a = (okaikei) => {
-    return okaikei * 1.1
-}
+ console.log(result);
 
-const result = func_a(10000)
-// result = 11000
-console.log(result)
 
 
-const goukei = func_a
-console.log(goukei)
+/* より簡略的な記述　テンプレートリテラル*/
+/*直感的に文字列の中に変数を入れることができ、わかりやすい
+改行を含むことができるので見通しの良い記述にすることができる*/ 
 
-const goukei2 = func_a(a)
+const result2 = strArry.reduce((accu,curr) => {
 
-const test = goukei(300)
-console.log(test)
+    return `${accu}<${curr}>`;
+ },"")/*第二引数に空文字列*/ 
 
-
-
-
-
-const func_b  = (okaikei2) => {
-    return okaikei2 * 2
-}
-
-
-const resultC = func_b(func_a(100))
-console.log(resultC)
-
-
-
-const func_xxx = (callback, okaikei) => {
-    return callback(okaikei) - 10
-}
-
-// const resultXxx = func_xxx(func_b, 150)
-// console.log(resultXxx)
-
-const sample = (num) => {
-    return num - 50
-}
-
-const resultZzz = func_xxx(sample, 250)
-console.log(resultZzz)
-
-const hello = (time) => {
-    if(time === "morning"){
-        return "good morning"
-    }
-    if(time === "afternoon"){
-        return "good afternoon"
-    }
-}
-
-const greet = (callback, time,name) => {
-    const greeting = callback(time)
-    return greeting + name
-}
-
-console.log(greet(hello, "afternoon","モップ頭"))
-// 
-
-console.log()
-
-
-
-
-
-const timeSale = function(origin, saleValue) {
-                /*        1000     300   */
-    return origin - saleValue
-    /*        700*/ 
-}
-
-const thirtySale = function(callback, b, c) {
-    /*                      timeSale.1000,200*/ 
-    const d = 300
-    /*   700　*/ 
-    const e = callback(b, d)
-    /*        timeSale(1000,300)      */ 
-    return e - c
-    /*   500   */ 
-}
-
-const fiftySale = function(callback, b, c) {
-    /*                    timeSale.1000,200*/
-    const d = 500
-    const e = callback(b, d)
-    /*              1000,500*/ 
-    return e - c
-    /*      500,*/ 
-}
-
-const aho = function(callback, b, c) {
-    /*                      1000,200*/ 
-    const d = 500
-    const e = callback(b, d)
-    return e - c
-}
-
-const payment = fiftySaleAndTwoHandred(aho, 1000, 200)
-                           
-
-
-
-
-
-
-const j = function(num){
-    return num * 100
-}
-
-func_xxx(j, 200)
-
-
-const k = function(num){
-    return num + 150 + 200 
-}
-
-func_xxx(k, 200)
-func_xxx(function(num){
-   return num + 150 + 200 
-}, 200)
-/*
-
-function(200){
-   return num + 150 + 200 
-}
-
-*/
-
-
-
-func
-
-
-/*
-
-j(okaikei)
-j(200)
-
-j(200) 
-
-func_xxx(j, 200)
-func_xxx = (callback, okaikei) {
-    return callback(okaikei) - 10
-    callback って何?
-    callback(okaikei) の正体は、この場合では、j(200)
-}
-
-
-
-
-*/
-
+ console.log(result2);
