@@ -1,46 +1,27 @@
-const arry = [1,2,3,4,5];
 
-/* 前のループの戻り値が次のループのaccumulatorに渡ってくるのがreduceというメソッド*/ 
-// 配列の中身を一つずつ足していって合計を求める事ができる
-arry.reduce(function(accu,curr){
-    console.log(accu,curr);
-    return accu + curr ;
+/*forEach 配列データの値1つずつに対してコールバック関数に記述した処理を実行
+配列やオブジェクトの要素に対して順番に処理を行いたい場合に非常に便利
+forEachメソッドの中でコールバック関数が行われている、引数(変数名val)であるに配列一つずつが渡っている状態
+第一引数に配列が渡っている、第二、第三引数も定義できる*/ 
+/* i ...配列の添字(index)*/ 
+
+const arry =[1,2,3,4,5];
+
+arry.forEach(function(val,i,ary){
+    console.log(val,i,ary)
 })
+/*値、添字、配列の順で5回ループする*/ 
 
-/*currentValue：現在処理されている要素 に*/ 
-/*1ループ目はaccuで配列[1,]から取って持ってきているが、
-それをcurrに全て戻すためにはreduceの第二引数に初期値を設定する*/ 
+// アロー関数
+arry.forEach((val,i,ary) => {
+    console.log(val,i,ary)
+})
+// 記述が一つの場合より短略化できバグが生まれにくい
+arry.forEach (v => console.log(v));
 
-arry.reduce(
-    function(accu,curr){
-    console.log(accu,curr);
-    // return accu + curr ;
-},10);
-
-/*文字列を分割して配列化する*/ 
-
-const str = 'opantyuusagi';
-const strArry = str.split('');
-
-console.log(strArry);
-
-/*文字列を< >で囲い分割で配列化したいとき*/
-
-const result = strArry.reduce((accu,curr) => {
-    return accu + "<" + curr + ">";
- },"")/*第二引数に空文字列*/ 
-
- console.log(result);
-
-
-
-/* より簡略的な記述　テンプレートリテラル*/
-/*直感的に文字列の中に変数を入れることができ、わかりやすい
-改行を含むことができるので見通しの良い記述にすることができる*/ 
-
-const result2 = strArry.reduce((accu,curr) => {
-
-    return `${accu}<${curr}>`;
- },"")/*第二引数に空文字列*/ 
-
- console.log(result2);
+for(let i = 0; i < arry.length; i++){
+    const v = arry[i];
+    console.log(v);
+}
+// for文とforEach
+// forEach 記述が少ない
