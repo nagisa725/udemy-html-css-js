@@ -1,34 +1,22 @@
-// const str = "animation";
-// const strArry = str.split("");
+//無名関数
+// document.querySelector('#btn');
+// btn.addEventListener('click',function(){
+//     alert('hello');
+// });
 
-// function tag(accu,curr){
-//     return `${accu}<${curr}>`;
-// }
+//一般的
+const btn = document.querySelector('#btn');
+const h1 = document.querySelector('h1');
 
-// const result = strArry.reduce(tag,"");
-// console.log(result);
+function changeBgColor(){
+    h1.style.backgroundColor ='green';
+    // alert('hello');
+};
+function changeColor(){
+    h1.style.color ='red';
+};
 
-/*reduceを使用し同義の記述を書くならこう*/
+btn.addEventListener('click',changeBgColor);
+btn.addEventListener('click',changeColor);
 
-const str = "animation";
-const strArry = str.split("");
-
-function tag(accu,curr) {
-    console.log(accu,curr);
-    return `${accu}<${curr}>`;
-}
-
-function reduce(arry,callback,defaultValue){
-    let accu = defaultValue;
-
-    for(let i=0; i < arry.length; i++){
-    let curr = arry[i];
-        accu = callback(accu,curr);
-    }
-    
-    return accu;
-}
-
-const result = strArry.reduce(tag,"");
-console.log(result);
-
+//btn.removeEventListener('click',hello);
