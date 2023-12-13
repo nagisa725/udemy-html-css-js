@@ -1,0 +1,13 @@
+{
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground": "#Fccc00",
+      "titleBar.activeForeground": "#15722c",
+      "activityBar.background": "#Fccc00",
+      "activityBar.foreground": "#004c97",
+      "activityBarBadge.background": "#004c97",
+      "scrollbarSlider.background": "#eb6100",
+      "editorGroup.border": "#004c97",
+      "editor.selectionBackground": "#757061",
+      "editorLineNumber.foreground":"#757061",
+    }
+  }
