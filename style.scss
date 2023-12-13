@@ -1,0 +1,55 @@
+$cBlack:Black;
+
+body{
+    text-align: center;
+}
+
+@mixin animation (
+    $name,
+    $duration: 1.4s,
+    $infinite:infinite,
+
+) {
+    animation-name:$name;
+    animation-duration: $duration;
+    animation-iteration-count:$infinite;
+}
+
+    .rect{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: $cBlack ;
+        @include animation(
+            $name:sk-bouncedelay
+        );
+        // animation:sk-bouncedelay 1.4s;
+        // animation-timing-function: ease;
+        // アニメーションのタイミングをいじる機能
+        // アニメーションの再生速度の変化パターンを設定するプロパティであーる *slackメモ
+        // animation-delay: 3s;
+        // animation-iteration-count: infinite;
+        // 挙動の繰り返し回数を指定出来る
+        // animation-direction:alternate-reverse;
+        // 再生方向 *slackメモ
+    }           
+
+@keyframes sk-bouncedelay {
+    0%{
+        transform: scale(0);
+        background-color: blue;
+        // 動きの制御の指定
+    }
+
+    40%{
+        transform: scale(2);
+        background-color: violet;
+    }
+
+    100%{
+        transform: scale(1);
+        background-color: lawngreen;
+    }
+}
+// 途中経過を詳細に記述したいのであれば　@keyframes を使うべし
+// アニメーションプロパティとともに使用する
