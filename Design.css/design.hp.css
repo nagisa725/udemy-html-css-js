@@ -1,0 +1,276 @@
+@charset "UTF-8";
+
+a {
+    text-decoration: none;
+}
+
+  ul,li {
+    list-style: none;
+}
+
+
+
+.header {  
+    background:#fff;
+    width: 100%;
+    height: 50px;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+} 
+
+.header__inner {
+    padding: 0 75px; /*左右の余白確保*/
+    display: flex; /*ロゴとハンバーガーメニューを横に並べる*/
+    justify-content: space-between;
+    height: inherit; /*親要素の高さを継承*/
+    position: relative;
+}
+
+.header__title {
+    color: black;
+    letter-spacing:1px;
+}
+
+.p-header__title {
+    width: 100%;
+    max-width: 120px;
+    height: 48px;
+    background: #fff;
+}
+
+.p-header__title a {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+.c-hamburger {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    border: 1px solid lightblue;
+    background: lightblue;
+    cursor: pointer;
+  }
+
+.c-hamburger span {
+display: block;
+position: relative;
+left: 50%;
+width: 30px;
+height: 2px;
+transform: translateX(-50%);
+background: #fff;
+transition: all 0.4s;
+}
+
+.c-hamburger span:nth-of-type(1) {
+    top: -4px;
+  }
+  
+  .c-hamburger span:nth-of-type(2) {
+    top: 1px;
+  }
+  
+  
+  .c-hamburger span:nth-of-type(3) {
+    top: 6px;
+  }
+  
+.c-hamburger  {
+display: block;
+top: 12px;
+background: transparent;
+color: #fff;
+font-size: 10px;
+font-weight: 400;
+line-height: 1;
+text-transform: uppercase;
+}
+
+.c-hamburger.is-active span:nth-of-type(1) {
+    top: 0;
+    transform: translateX(-50%) rotate(225deg);
+  }
+  
+  
+.c-hamburger.is-active span:nth-of-type(2) {
+opacity: 0;
+}
+
+
+.c-hamburger.is-active span:nth-of-type(3) {
+top: -4px;
+transform: translateX(-50%) rotate(-225deg);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.p-header__nav {
+    display: flex;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    font-weight: 700;
+    opacity: 0;
+    transition: 0.6s;
+  }
+
+@media screen and (min-width:768px) {
+.p-header__nav {
+    position: static;
+    height: 100%;
+    opacity: initial;
+    align-items: flex-end;
+}
+}
+
+.p-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    padding: 13px 20px;
+}
+
+.p-header__hamburger {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 95px;
+    height: 100%;
+  }
+
+  @media screen and (min-width:768px) {
+    .p-header__hamburger {
+      display: none;
+    }
+  }
+  
+  .p-header__nav.is-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: lightblue;
+    opacity: 1;
+    transition: 0.6s;
+  }
+  
+  .p-nav {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  
+  
+  @media screen and (min-width:768px) {
+    .p-nav {
+      padding-top: 16px;
+      padding-bottom: 16px
+    }
+  }
+  
+  
+  .p-nav__list {
+    display: block;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: lightblue;
+  }
+
+  @media screen and (min-width:768px) {
+    .p-nav__list {
+      display: flex;
+      background: #fff;
+      padding-right: 0;
+    }
+  }
+  
+  .p-nav__item {
+    position: relative;
+    width: 100%;
+  }
+  
+  .p-nav__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+
+.flex{
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin-top: 80px;
+}
+
+
+.photo{
+    display: flex;
+    width: 290px;
+    height: 290px;
+    object-fit: cover;
+    /* margin: 20px; */
+    border: 1px #2e2e2e solid;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 12px;
+}
+.flex_sns{
+    display: flex;
+    margin-left: 75px;
+    margin-top: 120px;
+    gap: 30px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+/* .space{
+    margin-top: 42px;
+    display: flex;
+    gap: 40px;
+} */
+.view{
+    text-align:center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+
+/* 普通のCSS */
+/* .header {
+}
+.header_wrapper {
+}
+.header_text {
+}
+.header_image {
+} */
+
+/* Sass */
+/* .header {
+    &_wrapper {}
+    &_text {}
+    &_image {}
+} */
