@@ -1,27 +1,28 @@
-body{
-    text-align: center
+body {
+  text-align: center;
 }
-#first{
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    background-color: #8a2be2;
+
+.rect {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: Black;
+  animation-name: sk-bouncedelay;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
 }
-.cls{
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    background-color:gold;
-}
-span{
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    background-color: #8a2be2; 
-}
-div{
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    margin: auto;
-}
+
+@keyframes sk-bouncedelay {
+  0% {
+    transform: scale(0);
+    background-color: blue;
+  }
+  40% {
+    transform: scale(2);
+    background-color: violet;
+  }
+  100% {
+    transform: scale(1);
+    background-color: lawngreen;
+  }
+}/*# sourceMappingURL=style.css.map */
